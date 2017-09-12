@@ -15,7 +15,7 @@ func main() {
 	//web宣告
 	router := InitRouter()
 	srv := &http.Server{
-		Addr:  	 ":8080",
+		Addr:  	 ":80",
 		Handler: router,
 	}
 	go func() {
