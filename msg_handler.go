@@ -23,5 +23,5 @@ func GetLocalIP() string {
 }
 
 func index(c *gin.Context) {
-	c.JSON(http.StatusOK, gin.H{"msg": "hello world, celad!","ip":GetLocalIP})
+	c.JSON(http.StatusOK, gin.H{"msg": "hello world, celad!","ip":GetLocalIP()})
 }

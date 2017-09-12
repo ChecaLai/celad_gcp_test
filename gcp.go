@@ -1,21 +1,13 @@
 package main
 
 import (
-	"github.com/gin-gonic/gin"
 	"context"
 	"log"
 	"net/http"
 	"os"
 	"os/signal"
+	"github.com/gin-gonic/gin"
 )
-
-func InitRouter() *gin.Engine {
-	gin.SetMode(gin.ReleaseMode)
-	//router := gin.New()
-	router := gin.Default()
-	router.GET("/", index)
-	return router
-}
 
 func main() {
 	ctx, cancel := context.WithCancel(context.Background())
@@ -41,6 +33,14 @@ func main() {
 	}
 
 	cancel()
-
 	log.Println("Server exit")
+	return
+}
+
+func InitRouter() *gin.Engine {
+	gin.SetMode(gin.ReleaseMode)
+	//router := gin.New()
+	router := gin.Default()
+	router.GET("/", index)
+	return router
 }
